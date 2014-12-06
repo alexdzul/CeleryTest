@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <link rel="shortcut icon" type="image/ico" href="../static/img/favicon.ico"/>
+    <link href="../static/css/style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="sendEmail">
+    <h1>Bienvenidos.</h1>
+    <h2>Suscríbete para recibir notificaciones de nuestro próximo lanzamiento. </h2>
+    <form action="." method="post" name="myForm">
+        {% csrf_token %}
+        <input type="email" name="email" id="email" required>
+        <input type="submit" id="send" value="GO!" onclick="validateForm()">
+    </form>
+    <p id="message"> {{ message }} </p>
+</div>
+<footer>
+        by <a href="https://twitter.com/alexjs88" target="_blank"> Alex Dzul </a>
+</footer>
+
+
+<script type="text/javascript">
+    function validateForm() {
+        var x = document.forms["myForm"]["email"].value;
+        var atpos = x.indexOf("@");
+        var dotpos = x.lastIndexOf(".");
+        if (atpos< 1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        }else{
+            document.getElementById('message').innerHTML = "Registrando tu email....";
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(fonts/HelveticaNeue-UltraLight.otf);
+}
+
+body {
+    background: url("img/background.jpg") no-repeat;
+    background-size: 100%;
+    color: white;
+    font-family: myFirstFont;
+}
+
+#sendEmail h1{
+    font-size: 90px;
+    margin-top: 4%;
+    margin-left: 6%;
+}
+
+#sendEmail h2{
+    margin-top: -3%;
+    margin-left: 6%;
+    font-size: 200%;
+}
+
+#sendEmail p{
+    margin-left: 6%;
+}
+
+#email{
+    color: white;
+    background-color: transparent;
+    font-family: myFirstFont;
+    font-size: 25px;
+    width: 40%;
+    height: 35px;
+    margin-left:  6%;
+    border: 1px solid white;
+}
+
+#send{
+    color: white;
+    font-family: myFirstFont;
+    margin-left: 10px;
+    background: #7caaff;
+    width: 10%;
+    font-size: 29.5px;
+    border: 1px solid white;
+}
+
+#send:hover {
+    cursor: pointer;
+    background: #6588ca;
+}
+
+footer{
+    width:100%;
+	height:8%;
+	position:absolute;
+	bottom:0;
+    right: 3%;
+    text-align: right;
+    padding-bottom: -10px;
+}
+
+footer a{
+    color: #71b5ff;
+}
