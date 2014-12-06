@@ -52,3 +52,8 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# ignorar la base de datos en SQLite
+*.sqlite3
+db.sqlite3
+*.db
