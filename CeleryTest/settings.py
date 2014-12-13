@@ -51,3 +51,9 @@ STATIC_URL = '/static/'
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'CeleryTest/templates'),
 )
+
+
+
+# Configuraciones para CELERY y CELERY BEATS.
+CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+CELERY_TIMEZONE = TIME_ZONE
