@@ -4,7 +4,7 @@ from celery import shared_task
 
 
 @shared_task()
-def send_email_async(email):
+def send_email(email):
     import time
     print "Inicia el envío del email..."
     repeats = range(8)
