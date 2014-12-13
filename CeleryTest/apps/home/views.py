@@ -2,7 +2,7 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from .models import Subscriber
-from .tasks import send_email_async
+from .tasks import send_email
 
 class IndexView(TemplateView):
     template_name = "index.html"
@@ -13,7 +13,7 @@ class IndexView(TemplateView):
             subs = Subscriber()
             subs.email = email
             subs.save()
-            send_email_async.delay(email)  # Enviamos un email
+            send_email.delay(email)  # Enviamos un email
             message = "Gracias por Registrarte  :)"
         except ValueError:
             message = "Error en la información recibida"
