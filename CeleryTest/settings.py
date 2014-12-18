@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '6btoh9*l8ujy-_f9)!y7-7%f%53f&crsec49rd)wy474iju08x'
@@ -57,3 +58,20 @@ TEMPLATE_DIRS = (
 # Configuraciones para CELERY y CELERY BEATS.
 CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
 CELERY_TIMEZONE = TIME_ZONE
+
+
+from __future__ import absolute_import
+from celery.schedules import timedelta
+
+CELERYBEAT_SCHEDULE = {
+    'send_to_subscribers': {
+        'task': 'CeleryTest.apps.home.tasks.send_news',
+        'schedule': timedelta(seconds=4),
+        'args': None
+    },
+}
+
+
+
+
+
